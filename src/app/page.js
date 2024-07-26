@@ -6,7 +6,7 @@ import Header from "@/components/layout/header";
 export default function Home() {
   return (
     <>
-      <Header />
+      
       <Hero />
       <HomeMenu />
 
@@ -47,9 +47,7 @@ export default function Home() {
           </a>
         </div>
       </section>
-      <footer className="border-t p-8 text-gray-500 text-center mt-16">
-        &copy; 2023 All rights reserved
-      </footer>
+    
     </>
   );
 }

@@ -6,3 +6,15 @@ section.hero {
   @apply grid;
   grid-template-columns: 1.4fr 1.6fr;
 }
+
+input[type="email"],input[type="password"],input[type="text"]{
+  @apply block w-full my-2 rounded-xl;
+  @apply  border p-2 border-gray-500 bg-gray-200;
+}
+button{
+  @apply block w-full text-gray-700 font-semibold;
+  @apply border border-gray-300  rounded-xl px-6 py-2;
+}
+button[type="submit"],.submit{
+  @apply border-0 bg-primary text-white;
+}
