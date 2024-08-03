@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react"
 import Image from "next/image"
+import {signIn} from 'next-auth/react'
 export default function LoginPage(){
 
     const [email,setEmail]=useState('')
@@ -9,7 +10,7 @@ export default function LoginPage(){
     async function handleFormSubmit(ev){
         ev.preventDefault();
         setLoginINProgress(true)
-        await signIn('Credentials')
+        await signIn('credentials',{email,password})
         setLoginINProgress(false)
 
     }
