@@ -4,15 +4,15 @@ import {User} from '../../../models/user'
 import CredentialsProvider from "next-auth/providers/credentials"
 import GoogleProvider from "next-auth/providers/google";
 import { MongoDBAdapter } from "@auth/mongodb-adapter"
-import clientPromise from '../../../../libs/mongoConnects'
+import client from '../../../../libs/mongoConnects'
 const bcrypt = require('bcryptjs');
 const handler = NextAuth({
   secret:process.env.SECRET,
-  adapter: MongoDBAdapter(clientPromise),
+  // adapter: MongoDBAdapter(client),
     providers: [
       GoogleProvider({
-        clientId: '218735831504-ilbmlmkass39f2kti9c20vfn5pq6ou26.apps.googleusercontent.com',
-        clientSecret: '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'
+        clientId: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET
       })
     ,
         CredentialsProvider({
