@@ -10,7 +10,7 @@ export default function LoginPage(){
     async function handleFormSubmit(ev){
         ev.preventDefault();
         setLoginINProgress(true)
-        await signIn('credentials',{email,password})
+        await signIn('credentials',{email,password,callbackUrl:'/'})
         setLoginINProgress(false)
 
     }
@@ -24,7 +24,7 @@ export default function LoginPage(){
                <div className="my-4 text-center text-gray-500">
                     Or login with Provider
                 </div>
-                    <button className="flex gap-4 justify-center">
+                    <button type="button" onClick={()=>signIn('google',{callbackUrl:'/'})} className="flex gap-4 justify-center">
                         <Image src={'/google.png'} alt="" width={24} height={24}/>
                         Login with Google
                         </button>
