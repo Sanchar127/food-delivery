@@ -7,7 +7,7 @@ import { MongoDBAdapter } from "@auth/mongodb-adapter"
 import client from '../../../../libs/mongoConnects'
 const bcrypt = require('bcryptjs');
 const handler = NextAuth({
-  secret:process.env.SECRET,
+  //secret:process.env.SECRET,
   // adapter: MongoDBAdapter(client),
     providers: [
       GoogleProvider({
